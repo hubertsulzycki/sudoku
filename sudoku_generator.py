@@ -104,7 +104,7 @@ def clear_numbers(grid):
         else:
             clear_grid[value[0]][value[1]]=grid[value[0]][value[1]]
 
-    return clear_grid
+    return clear_grid, spots_to_clear
 
 def generate_grid():
 
@@ -113,9 +113,9 @@ def generate_grid():
     while not is_grid_finished(grid):        
         fill_grid(grid)
 
-    gaming_grid=clear_numbers(grid)  
+    gaming_grid, values_to_check =clear_numbers(grid)  
 
-    return grid, gaming_grid   
+    return grid, gaming_grid, values_to_check
 
 
 def printg(grid):
