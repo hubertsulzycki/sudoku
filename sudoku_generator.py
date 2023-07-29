@@ -13,9 +13,7 @@ grid.append([0,0,0,0,0,0,0,0,0])
 grid.append([0,0,0,0,0,0,0,0,0])
 
 def is_grid_finished(grid):
-    # print("finished")
-    # printg(grid)
-    # print("\n")
+ 
     for row in grid:
         for number in row:
             if number==0:
@@ -23,9 +21,7 @@ def is_grid_finished(grid):
     return True
 
 def check_input(grid,row,col,value):
-    # print("check")
-    # printg(grid)
-    # print("\n")
+
     #row
     if value in grid[row]:
         #print("r")

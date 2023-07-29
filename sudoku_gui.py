@@ -1,18 +1,27 @@
 import tkinter as tk
 
-main_window=tk.Tk()
+main_window = tk.Tk()
 main_window.title("Sudoku")
-main_window.geometry("500x500")
+main_window.geometry("800x800")
 
-title=tk.Label(main_window, text="Sudoku",font=('Arial',20))
-title.pack(padx=15,pady=15)
+support_frame = tk.Frame(main_window, height=600, width=600, bg='green', padx=10, pady=10)
+support_frame.pack_configure(side=tk.TOP)  # Place at the top
 
-frame=tk.Frame(main_window)
-frame.pack()
-id_entry = tk.Entry(frame)
-id_entry.grid(row=1,column=0)
+# Center support_frame both horizontally and vertically
+support_frame.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
 
-for x in range(3):
-    for y in range(3):
-        pass
+title = tk.Label(support_frame, text="Sudoku", font=('Arial', 20))
+title.pack(padx=15, pady=15)
+
+sudoku_frame = tk.Frame(support_frame, bg="red")
+sudoku_frame.pack()
+
+entries = []
+
+for x in range(9):
+    entries.append([])
+    for y in range(9):
+        entries[x].append(tk.Entry(sudoku_frame, justify="center", width=2, font=('Arial', 24)))
+        entries[x][y].grid(row=x, column=y)
+
 main_window.mainloop()
