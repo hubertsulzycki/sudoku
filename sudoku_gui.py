@@ -1,4 +1,6 @@
 import tkinter as tk
+import sudoku_generator as sg
+import gui_functions as gf
 
 main_window = tk.Tk()
 main_window.title("Sudoku")
@@ -34,5 +36,9 @@ restart_button.pack(padx=10,pady=10,side=tk.LEFT, fill=tk.BOTH, expand=True)
 
 save_button=tk.Button(support_frame,text="Save",width=7, height=2)
 save_button.pack(padx=10,pady=10,side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+grid, gaming_grid, values_to_check = sg.generate_grid()
+
+gf.fill_entries(entries,gaming_grid)
 
 main_window.mainloop()
